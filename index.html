@@ -3,19 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TV Show Project | Houssam (HoussamLh)</title>
-    <link href="style.css" rel="stylesheet" />
+    <title>TV Show Project | Level 200</title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" /> <!-- optional -->
   </head>
 
   <body>
-    <div id="root">
-    </div>
+    <!-- Controls row -->
+   <div class="controls">
+    <label for="search">Search for an episode:</label>
+    <input type="text" id="search" placeholder="E.g. Winter" />
+    <span id="episode-count"></span>
+    <label for="episode-selector">Select an episode:</label>
+    <select id="episode-selector"></select>
+  </div>
 
-    <!-- Loads a provided function called getAllEpisodes() which returns all episodes -->
+    <!-- Where all episode cards will be rendered -->
+    <div id="root"></div>
+
+    <!-- Data source (provides getAllEpisodes) -->
     <script src="episodes.js"></script>
 
-    <!-- Loads YOUR javascript code -->
+    <!-- Your code -->
     <script src="script.js"></script>
   </body>
 </html>
+
