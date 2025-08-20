@@ -1,65 +1,98 @@
-/* Root container as grid */
-.episodes-grid {
-  display: grid;
-  
-  grid-template-columns: repeat(3, 1fr);
-  
-  gap: 20px;
-  
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
   padding: 10px;
+  text-align: center;
+  background-color: #f2f2f2;
 }
 
-/* Responsive: 2 per row on medium screens */
-@media (max-width: 900px) {
-  .episodes-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+#searchInput {
+  padding: 8px;
+  width: 60%;
+  max-width: 400px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }
 
-/* Responsive: 1 per row on small screens */
-@media (max-width: 600px) {
-  .episodes-grid {
-    grid-template-columns: 1fr;
-  }
+#showSelect,
+#episodeSelect {
+  margin-left: 10px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+#searchCount {
+  margin-top: 5px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* Grid for episode cards */
+#root {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  column-gap: 1.5rem;
+  row-gap: 1.8rem;
+  padding: 1.3rem;
+  justify-content: center;
 }
 
 /* Each episode card */
-.episode-card {
-  background: #fff;
-  border: 1px solid #ccc;
-  padding: 10px;
+section {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgb(91, 90, 90);
   border-radius: 6px;
-  text-align: center;
+  font-weight: 500;
+  background: #fff;
 }
 
-/* Images inside cards */
-.episode-card img {
+/* Images */
+section img {
   max-width: 100%;
   height: auto;
   border-radius: 4px;
-}
-
-/* Title */
-.episode-card h3 {
-  font-size: 1rem;
   margin: 10px 0;
 }
 
+/* Title */
+section h2 {
+  font-size: 1.2rem;
+  margin: 0 0 5px 0;
+}
+
 /* Summary */
-.episode-card div {
+section .summary {
   font-size: 0.9rem;
   margin: 5px 0;
 }
 
-/* Link */
-.episode-card a {
-  display: inline-block;
-  margin-top: 5px;
-  color: #1a73e8;
-  text-decoration: none;
+/* Season/Episode code */
+section .seasonAndEpisode {
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
-.episode-card a:hover {
+/* Footer links */
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #f2f2f2;
+}
+
+footer a {
+  text-decoration: none;
+  color: #1a73e8;
+}
+
+footer a:hover {
   text-decoration: underline;
 }
 
