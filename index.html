@@ -1,32 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TV Show Project | Houssam (Level 300)</title>
-  <link href="style.css" rel="stylesheet" />
-  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-</head>
-<body>
-  <label for="title-select">Select Episode:</label>
-  <select id="title-select">
-    <option value="">Loading episodes...</option>
-  </select>
-  <label>
-    Search
-    <input type="search" id="search-box" name="search" placeholder="Search term" />
-    🔍
-  </label>
-  <p id="title-count"></p>
-  <div id="root"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TV Show Project | Mansoor Munawar (MansoorM11)</title>
+    <link href="style.css" rel="stylesheet" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  </head>
 
-  <footer>
-    <p>
-      All TV show data provided by
-      <a href="https://www.tvmaze.com/" target="_blank" rel="noopener">TVMaze</a>
-    </p>
-  </footer>
+  <body>
+    <header>
+      <input type="text" id="searchInput" placeholder="Search episodes..." />
 
-  <script src="script.js"></script>
-</body>
+      <label for="showSelect">Choose a show:</label>
+      <select id="showSelect">
+        <option value="">Loading shows...</option>
+      </select>
+
+      <label for="episodeSelect">Choose an episode:</label>
+      <select id="episodeSelect">
+        <option value="all">Show All Episodes</option>
+      </select>
+      <p id="searchCount"></p>
+    </header>
+
+    <template id="template">
+      <section>
+        <h2>Film title</h2>
+        <p class="seasonAndEpisode">Season and Episode</p>
+        <img src="" alt="" />
+        <p class="summary">Summary</p>
+      </section>
+    </template>
+
+    <div id="root"></div>
+
+    <footer>
+      <p>
+        All of the tv show data is provided by
+        <a href="https://www.tvmaze.com/" target="_blank" rel="noopener">TVMaze</a>
+      </p>
+    </footer>
+
+    <!-- Provided episodes function -->
+    <script src="episodes.js"></script>
+    <!-- Level 400 script -->
+    <script src="script.js"></script>
+  </body>
 </html>
