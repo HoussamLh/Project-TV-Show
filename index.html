@@ -1,32 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TV Show Project | Houssam (Level 300)</title>
-  <link href="style.css" rel="stylesheet" />
-  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-</head>
-<body>
-  <label for="title-select">Select Episode:</label>
-  <select id="title-select">
-    <option value="">Loading episodes...</option>
-  </select>
-  <label>
-    Search
-    <input type="search" id="search-box" name="search" placeholder="Search term" />
-    🔍
-  </label>
-  <p id="title-count"></p>
-  <div id="root"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TV Show Project | Houssam (Level 300)</title>
+    <link href="style.css" rel="stylesheet" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <label for="select-show">Select Show</label>
+    <select id="select-show">
+      <option value=""></option>
+    </select>
+    <label for="title-select">Select Episode:</label>
+    <select id="title-select">
+      <option value="">Loading episodes...</option>
+    </select>
+    <label>
+      Search
+      <input
+        type="search"
+        id="search-box"
+        name="search"
+        placeholder="Search term"
+      />
+      🔍
+    </label>
+    <p id="title-count"></p>
+    <div id="root"></div>
 
-  <footer>
-    <p>
-      All TV show data provided by
-      <a href="https://www.tvmaze.com/" target="_blank" rel="noopener">TVMaze</a>
-    </p>
-  </footer>
+    <footer>
+      <p>
+        All TV show data provided by
+        <a href="https://www.tvmaze.com/" target="_blank" rel="noopener"
+          >TVMaze</a
+        >
+      </p>
+    </footer>
 
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
