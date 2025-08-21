@@ -1,65 +1,211 @@
-/* Root container as grid */
-.episodes-grid {
-  display: grid;
-  
-  grid-template-columns: repeat(3, 1fr);
-  
-  gap: 20px;
-  
-  padding: 10px;
+/* Basic layout */
+* {
+  box-sizing: border-box;
 }
 
-/* Responsive: 2 per row on medium screens */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: #fafafa;
+  color: #222;
+}
+
+.topbar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 16px;
+  background: #ffffff;
+  border-bottom: 1px solid #e6e6e6;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.btn {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  background: #f3f4f6;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #e8e9ec;
+}
+
+.nav-current {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Controls row */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+  align-items: center;
+  padding: 12px 16px;
+}
+
+.control {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.control input[type="search"],
+.control select {
+  padding: 8px 10px;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  min-width: 220px;
+  background: #fff;
+}
+
+.count {
+  color: #666;
+}
+
+/* ===== Shows listing grid ===== */
+.shows-grid {
+  display: grid;
+  gap: 16px;
+  padding: 12px 16px 24px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 1200px) {
+  .shows-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 900px) {
+  .shows-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .shows-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.show-card {
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.show-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.show-media {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  background: #f1f1f1;
+}
+
+.show-body {
+  padding: 12px;
+  display: grid;
+  gap: 6px;
+}
+
+.show-title {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.show-meta {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.show-summary {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #eef2ff;
+  border: 1px solid #dbe2ff;
+  font-size: 0.75rem;
+  color: #334155;
+  margin-right: 6px;
+}
+
+/* ===== Episodes grid ===== */
+.episodes-grid {
+  display: grid;
+  gap: 16px;
+  padding: 12px 16px 24px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 1000px) {
   .episodes-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Responsive: 1 per row on small screens */
-@media (max-width: 600px) {
+@media (max-width: 640px) {
   .episodes-grid {
     grid-template-columns: 1fr;
   }
 }
 
-/* Each episode card */
+
 .episode-card {
-  background: #fff;
-  border: 1px solid #ccc;
-  padding: 10px;
-  border-radius: 6px;
-  text-align: center;
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  padding: 12px;
 }
 
-/* Images inside cards */
-.episode-card img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 4px;
-}
-
-/* Title */
 .episode-card h3 {
+  margin: 0 0 8px;
   font-size: 1rem;
-  margin: 10px 0;
 }
 
-/* Summary */
-.episode-card div {
-  font-size: 0.9rem;
-  margin: 5px 0;
+.episode-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  background: #f1f1f1;
 }
 
-/* Link */
-.episode-card a {
-  display: inline-block;
-  margin-top: 5px;
-  color: #1a73e8;
+.episode-card .summary {
+  font-size: 0.92rem;
+  color: #444;
+}
+
+footer {
+  text-align: center;
+  padding: 16px;
+  color: #666;
+}
+
+footer a {
+  color: #2563eb;
   text-decoration: none;
 }
 
-.episode-card a:hover {
+footer a:hover {
   text-decoration: underline;
 }
 
